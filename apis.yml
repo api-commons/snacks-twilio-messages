@@ -83,7 +83,6 @@ common:
         "termsOfService": "https://www.twilio.com/en-us/legal/tos ",
       }
 
-
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
