@@ -10,7 +10,7 @@ tags:
 created: '2024-09-27'
 modified: '2024-09-27'
 url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/apis.yml
-specificationVersion: '0.18'
+specificationVersion: '0.19'
 apis:
 
   - aid: api-commons:snack-send-twilio-message
@@ -24,18 +24,66 @@ apis:
       - Messages
     properties:
 
-      - type: Documentation
-        url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource
-
       - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/openapi.yml       
+        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/openapi.yml  
+        mediaType: application/openapi+yaml   
+
+      - type: PostmanCollection
+        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/postman-collection.json
+        mediaType: application/json
+
+      - type: PostmanEnvironment
+        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/postman-environment.json
+        mediaType: application/json     
+
+      - type: JsonLd
+        mediaType: application/ld+json          
+        data:
+          {
+            "@context": "https://schema.org/",
+            "@type": "Message"  
+          }           
 
 common:
 
-- type: Signup
-  url: https://example.com/signup
+  - type: Documentation
+    url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource
+    mediaType: text/html
+    jsonLd: 
+      {
+        "@context": "https://schema.org/",
+        "@type": "HowTo"  
+      }     
+
+  - type: Signup
+    url: https://login.twilio.com/u/signup
+    mediaType: text/html
+    jsonLd: 
+      {
+        "@context": "https://schema.org/",
+        "@type": "RegisterAction"  
+      }     
+
+  - type: Pricing
+    url: https://www.twilio.com/en-us/sms/pricing/us   
+    mediaType: text/html
+    jsonLd:
+      {
+        "@context": "https://schema.org/",
+        "@type": "PriceSpecification"  
+      }
+  
+  - type: TermsOfService
+    url: https://www.twilio.com/en-us/legal/tos   
+    mediaType: text/html
+    jsonLd:
+      {
+        "@context": "https://schema.org/",
+        "@type": "Service"  ,
+        "termsOfService": "https://www.twilio.com/en-us/legal/tos ",
+      }
+
 
 maintainers:
 - FN: Kin Lane
-  X-twitter: apievangelist
-  email: info@apievangelist.com
+  email: kin@apievangelist.com
