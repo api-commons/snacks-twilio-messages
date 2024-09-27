@@ -36,7 +36,7 @@ apis:
         url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/postman-environment.json
         mediaType: application/json     
 
-      - type: JsonLd
+      - type: SchemaOrg
         mediaType: application/ld+json          
         data:
           {
