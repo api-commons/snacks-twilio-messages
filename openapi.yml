@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  title: Send Message with Twilio
+  description: This is an OpenAPI for a single send message operation from Twilio.
+  termsOfService: https://www.twilio.com/legal/tos
+  contact:
+    name: Kin Lane
+    url: https://apievangelist.com
+    email: kin@apievangelist.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.52.0
+servers:
+  - url: https://ip-messaging.twilio.com
+tags:
+  - name: Messages  
+paths:
+  /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}:
+    post:
+      description: 'Sending a message for an account and via specific channel.'
+      operationId: sendMessage
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SendMessage'      
+      tags:
+        - Messages
+      parameters:
+        - name: ServiceSid
+          in: path
+          description: ''
+          schema:
+            type: string
+            minLength: 34
+            maxLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+          required: true
+        - name: ChannelSid
+          in: path
+          description: ''
+          schema:
+            type: string
+          required: true
+        - name: Sid
+          in: path
+          description: ''
+          schema:
+            type: string
+            minLength: 34
+            maxLength: 34
+            pattern: ^IM[0-9a-fA-F]{32}$
+          required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReceiveMessage'          
+      security:
+        - accountSid_authToken: []
+components:
+  schemas:
+    ReceiveMessage:
+      type: object
+      properties:
+        sid:
+          type: string
+          minLength: 34
+          maxLength: 34
+          pattern: ^IM[0-9a-fA-F]{32}$
+          nullable: true
+        account_sid:
+          type: string
+          minLength: 34
+          maxLength: 34
+          pattern: ^AC[0-9a-fA-F]{32}$
+          nullable: true
+        attributes:
+          type: string
+          nullable: true
+        service_sid:
+          type: string
+          minLength: 34
+          maxLength: 34
+          pattern: ^IS[0-9a-fA-F]{32}$
+          nullable: true
+        to:
+          type: string
+          minLength: 34
+          maxLength: 34
+          pattern: ^CH[0-9a-fA-F]{32}$
+          nullable: true
+        channel_sid:
+          type: string
+          minLength: 34
+          maxLength: 34
+          pattern: ^CH[0-9a-fA-F]{32}$
+          nullable: true
+        date_created:
+          type: string
+          format: date-time
+          nullable: true
+        date_updated:
+          type: string
+          format: date-time
+          nullable: true
+        last_updated_by:
+          type: string
+          nullable: true
+        was_edited:
+          type: boolean
+          nullable: true
+        from:
+          type: string
+          nullable: true
+        body:
+          type: string
+          nullable: true
+        index:
+          type: integer
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        media:
+          nullable: true
+        url:
+          type: string
+          format: uri
+          nullable: true
+    message_enum_webhook_enabled_type:
+      type: string
+      enum:
+        - 'true'
+        - 'false'
+    SendMessage:
+      type: object
+      properties:
+        Body:
+          type: string
+          description: ''
+        Attributes:
+          type: string
+          description: ''
+        DateCreated:
+          type: string
+          format: date-time
+          description: ''
+        DateUpdated:
+          type: string
+          format: date-time
+          description: ''
+        LastUpdatedBy:
+          type: string
+          description: ''
+        From:
+          type: string
+          description: ''        
+  securitySchemes:
+    accountSid_authToken:
+      type: http
+      scheme: basic     
+    

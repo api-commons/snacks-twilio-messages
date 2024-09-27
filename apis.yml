@@ -1,0 +1,39 @@
+aid: api-commons
+name: API Commons Snack for AI - Send Twilio Message
+type: Snack
+description: |-
+  This is an API Commons Snack for artificial intelligence, providing a single API-powered capability that can be used via artificial intelligence applications.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- API
+created: '2024-09-27'
+modified: '2024-09-27'
+url: http://example.com/apis.json
+specificationVersion: '0.18'
+apis:
+
+  - aid: api-commons:snack-send-twilio-message
+    name: Send Twilio Message
+    description: This operation sends a message using Twilio.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: http://example.com
+    baseURL: http://api.example.com
+    tags:
+    - API
+    properties:
+
+      - type: Documentation
+        url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource
+
+      - type: OpenAPI
+        url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource        
+
+common:
+
+- type: Signup
+  url: https://example.com/signup
+
+maintainers:
+- FN: Kin Lane
+  X-twitter: apievangelist
+  email: info@apievangelist.com
