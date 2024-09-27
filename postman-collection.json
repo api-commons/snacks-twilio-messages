@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "733db288-6348-435a-8658-0163fda11c8a",
+		"name": "Send Message with Twilio",
+		"description": "This is an OpenAPI for a single send message operation from Twilio.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35240",
+		"_collection_link": "https://www.postman.com/api-evangelist/api-commons-snack/collection/35240-733db288-6348-435a-8658-0163fda11c8a?action=share&source=collection_link&creator=35240"
+	},
+	"item": [
+		{
+			"name": "send Message",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{basicAuthUsername}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{basicAuthPassword}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Body",
+							"value": "<string>"
+						},
+						{
+							"key": "Attributes",
+							"value": "<string>"
+						},
+						{
+							"key": "DateCreated",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "DateUpdated",
+							"value": "<dateTime>"
+						},
+						{
+							"key": "LastUpdatedBy",
+							"value": "<string>"
+						},
+						{
+							"key": "From",
+							"value": "<string>"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v2/Services/:ServiceSid/Channels/:ChannelSid/Messages/:Sid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v2",
+						"Services",
+						":ServiceSid",
+						"Channels",
+						":ChannelSid",
+						"Messages",
+						":Sid"
+					],
+					"variable": [
+						{
+							"key": "ServiceSid",
+							"value": "IS92f3bb12CfFaFF76b2D27f9b7eEea910",
+							"description": "(Required) "
+						},
+						{
+							"key": "ChannelSid",
+							"value": "<string>",
+							"description": "(Required) "
+						},
+						{
+							"key": "Sid",
+							"value": "IMd7211c1B207a8ED8e1a5447D2C801f76",
+							"description": "(Required) "
+						}
+					]
+				},
+				"description": "Sending a message for an account and via specific channel."
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic <credentials>",
+								"description": "Added as a part of security scheme: basic"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Body",
+									"value": "<string>"
+								},
+								{
+									"key": "Attributes",
+									"value": "<string>"
+								},
+								{
+									"key": "DateCreated",
+									"value": "<dateTime>"
+								},
+								{
+									"key": "DateUpdated",
+									"value": "<dateTime>"
+								},
+								{
+									"key": "LastUpdatedBy",
+									"value": "<string>"
+								},
+								{
+									"key": "From",
+									"value": "<string>"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://ip-messaging.twilio.com/v2/Services/:ServiceSid/Channels/:ChannelSid/Messages/:Sid",
+							"protocol": "https",
+							"host": [
+								"ip-messaging",
+								"twilio",
+								"com"
+							],
+							"path": [
+								"v2",
+								"Services",
+								":ServiceSid",
+								"Channels",
+								":ChannelSid",
+								"Messages",
+								":Sid"
+							],
+							"variable": [
+								{
+									"key": "ServiceSid"
+								},
+								{
+									"key": "ChannelSid"
+								},
+								{
+									"key": "Sid"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"sid\": \"IMe004D525DF8D123545A468E5fe19E3D2\",\n  \"account_sid\": \"ACBAb8Df6Ecc68CDADDEEEFFac6CEaf685\",\n  \"attributes\": \"<string>\",\n  \"service_sid\": \"IS37D19b12128DefA0aCADb3435Cf58EA8\",\n  \"to\": \"CHbA4cC993A8f440f7A7fd5d80901EC5Db\",\n  \"channel_sid\": \"CH9740dE6c82f2aFd1e3da8Af2A70B8784\",\n  \"date_created\": \"<dateTime>\",\n  \"date_updated\": \"<dateTime>\",\n  \"last_updated_by\": \"<string>\",\n  \"was_edited\": \"<boolean>\",\n  \"from\": \"<string>\",\n  \"body\": \"<string>\",\n  \"index\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"media\": {\n    \"nullable\": true\n  },\n  \"url\": \"<uri>\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://ip-messaging.twilio.com"
+		}
+	]
+}

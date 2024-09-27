@@ -5,10 +5,11 @@ description: |-
   This is an API Commons Snack for artificial intelligence, providing a single API-powered capability that can be used via artificial intelligence applications.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- API
+- Twilio
+- Messages
 created: '2024-09-27'
 modified: '2024-09-27'
-url: http://example.com/apis.json
+url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/apis.yml
 specificationVersion: '0.18'
 apis:
 
@@ -16,17 +17,18 @@ apis:
     name: Send Twilio Message
     description: This operation sends a message using Twilio.
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: http://example.com
+    humanURL: https://www.twilio.com
     baseURL: http://api.example.com
     tags:
-    - API
+      - Send
+      - Messages
     properties:
 
       - type: Documentation
         url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource
 
       - type: OpenAPI
-        url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource        
+        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/openapi.yml       
 
 common:
 
