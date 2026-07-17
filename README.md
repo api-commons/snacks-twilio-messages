@@ -23,7 +23,6 @@ If you have any questions please [submit an issue](https://github.com/api-common
 A machine-readable building block from **[API Commons](https://apicommons.org)** — open specifications and schemas for the APIs you produce and consume. See all building blocks and tools at **[apicommons.org](https://apicommons.org)** and the tools at **[apicommons.org/tools](https://apicommons.org/tools/)**.
 
 **Related building blocks**
-- [agent-skills](https://github.com/api-commons/agent-skills) — reference `SKILL.md` skills that teach agents how to drive these capabilities
 - [examples](https://github.com/api-commons/examples) — shared request/response examples for API operations
 - [api-onboarding](https://github.com/api-commons/api-onboarding) — the API Onboarding Descriptor (AID) for what it takes to onboard with a provider like Twilio
 - [train-travel](https://github.com/api-commons/train-travel) — a full APIs.json + OpenAPI template for a complete example API
