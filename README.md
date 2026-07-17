@@ -1,97 +1,29 @@
-# API Commons API Snack for AI - Send Message with Twilio
-This is an API Snack for artificial intelligence (AI) to send message with Twilio, providing a single machine readable definition for sending a message with the Twilio API, with the supporting semantics and properties needed to add more context.
+# API Commons API Snack for AI — Send a Message with Twilio
 
-```
-aid: api-commons
-name: API Commons Snack for AI - Send Twilio Message
-type: Snack
-description: |-
-  This is an API Commons Snack for artificial intelligence, providing a single API-powered capability that can be used via artificial intelligence applications.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-- Twilio
-- Messages
-created: '2024-09-27'
-modified: '2024-09-27'
-url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/apis.yml
-specificationVersion: '0.19'
-apis:
+This is an **API Snack** for artificial intelligence (AI): a single, machine-readable definition of one useful API-powered capability — sending a message with the [Twilio](https://www.twilio.com) API — packaged with the supporting semantics and properties an agent needs to understand and use it.
 
-  - aid: api-commons:snack-send-twilio-message
-    name: Send Twilio Message
-    description: This operation sends a message using Twilio.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://www.twilio.com
-    baseURL: http://api.example.com
-    tags:
-      - Send
-      - Messages
-    properties:
+An API Snack narrows a large provider API down to one focused capability and bundles everything an AI application needs to invoke it: the operation definition, ready-to-run tooling, and the surrounding context (documentation, signup, pricing, and terms of service) expressed as machine-readable [APIs.json](https://apisjson.org) with linked [Schema.org](https://schema.org) semantics.
 
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/openapi.yml  
-        mediaType: application/openapi+yaml   
+## What's in this repo
 
-      - type: PostmanCollection
-        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/postman-collection.json
-        mediaType: application/json
+- [apis.yml](apis.yml) — The APIs.json (`type: Snack`, specification 0.19) index that ties everything together: the `Send Twilio Message` operation and its linked artifacts, plus `Documentation`, `Signup`, `Pricing`, and `TermsOfService` common properties, each annotated with JSON-LD (`HowTo`, `RegisterAction`, `PriceSpecification`, `Service`).
+- [openapi.yml](openapi.yml) — The OpenAPI definition for the single "send a message" operation.
+- [postman.json](postman.json) — A Postman collection for exercising the operation.
+- [Send Message with Twilio.postman_environment.json](Send%20Message%20with%20Twilio.postman_environment.json) — A Postman environment with the variables the collection expects.
 
-      - type: PostmanEnvironment
-        url: https://raw.githubusercontent.com/api-commons/snacks-twilio-messages/refs/heads/main/postman-environment.json
-        mediaType: application/json     
+## How it fits API Commons
 
-      - type: JsonLd
-        mediaType: application/ld+json          
-        data:
-          {
-            "@context": "https://schema.org/",
-            "@type": "Message"  
-          }           
-
-common:
-
-  - type: Documentation
-    url: https://www.twilio.com/docs/messaging/api/message-resource#create-a-message-resource
-    mediaType: text/html
-    jsonLd: 
-      {
-        "@context": "https://schema.org/",
-        "@type": "HowTo"  
-      }     
-
-  - type: Signup
-    url: https://login.twilio.com/u/signup
-    mediaType: text/html
-    jsonLd: 
-      {
-        "@context": "https://schema.org/",
-        "@type": "RegisterAction"  
-      }     
-
-  - type: Pricing
-    url: https://www.twilio.com/en-us/sms/pricing/us   
-    mediaType: text/html
-    jsonLd:
-      {
-        "@context": "https://schema.org/",
-        "@type": "PriceSpecification"  
-      }
-  
-  - type: TermsOfService
-    url: https://www.twilio.com/en-us/legal/tos   
-    mediaType: text/html
-    jsonLd:
-      {
-        "@context": "https://schema.org/",
-        "@type": "Service"  ,
-        "termsOfService": "https://www.twilio.com/en-us/legal/tos ",
-      }
-
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-
-```  
+Snacks are one of the [API Commons](https://apicommons.org) building blocks aimed squarely at the agent layer: instead of pointing an AI at a whole provider API, you hand it one small, well-described, ready-to-use capability. Each Snack is discoverable and reusable alongside every other artifact in the [APIs.io](https://apis.io) catalog.
 
 ## Support
-If you have any questions please [submit an issue](https://github.com/api-commons/snacks-twilio-messages/issues/new) or feel free to email [kin@apievangelist.com](mailto: kin@apievangelist.com), and I will see how I can help.
+If you have any questions please [submit an issue](https://github.com/api-commons/snacks-twilio-messages/issues/new) or feel free to email [kin@apievangelist.com](mailto:kin@apievangelist.com), and I will see how I can help.
+
+## Part of API Commons
+
+A machine-readable building block from **[API Commons](https://apicommons.org)** — open specifications and schemas for the APIs you produce and consume. See all building blocks and tools at **[apicommons.org](https://apicommons.org)** and the tools at **[apicommons.org/tools](https://apicommons.org/tools/)**.
+
+**Related building blocks**
+- [agent-skills](https://github.com/api-commons/agent-skills) — reference `SKILL.md` skills that teach agents how to drive these capabilities
+- [examples](https://github.com/api-commons/examples) — shared request/response examples for API operations
+- [api-onboarding](https://github.com/api-commons/api-onboarding) — the API Onboarding Descriptor (AID) for what it takes to onboard with a provider like Twilio
+- [train-travel](https://github.com/api-commons/train-travel) — a full APIs.json + OpenAPI template for a complete example API
