@@ -26,3 +26,10 @@ A machine-readable building block from **[API Commons](https://apicommons.org)**
 - [examples](https://github.com/api-commons/examples) — shared request/response examples for API operations
 - [api-onboarding](https://github.com/api-commons/api-onboarding) — the API Onboarding Descriptor (AID) for what it takes to onboard with a provider like Twilio
 - [train-travel](https://github.com/api-commons/train-travel) — a full APIs.json + OpenAPI template for a complete example API
+
+## License
+
+The artifacts in this repository — the schemas, examples, and API descriptions — are
+licensed **[CC BY-NC-SA 4.0](LICENSE)** (Attribution–NonCommercial–ShareAlike).
+
+API Commons licenses **artifacts** under CC BY-NC-SA 4.0 and **code** under Apache-2.0.
